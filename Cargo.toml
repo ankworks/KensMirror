@@ -1,0 +1,35 @@
+[package]
+name = "kensmirror"
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.85"
+license = "GPL-3.0-or-later"
+publish = false
+description = "Screen-mirroring receiver for Windows: shows an iPhone or iPad screen in a window, plays its sound and records both to MP4."
+readme = "README.md"
+keywords = ["screen-mirroring", "windows", "receiver"]
+
+[dependencies]
+rust-airplay = "=0.3.2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+log = { version = "0.4", features = ["std"] }
+rusty_aac = "=2.0.2"
+cpal = "0.18"
+winit = "0.30"
+softbuffer = "0.4"
+getrandom = "0.4"
+
+[dependencies.windows]
+version = "0.62"
+features = [
+    "Win32_Foundation",
+    "Win32_Media_MediaFoundation",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_SystemInformation",
+    "Win32_System_Variant",
+]
+
+[profile.release]
+opt-level = 3
+debug = false

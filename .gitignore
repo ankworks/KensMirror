@@ -1,0 +1,8 @@
+/target/
+/selftest/
+*.log
+*.pid
+*.bmp
+*.mp4
+*.h264
+*.bin
